@@ -1,6 +1,5 @@
 import datetime
 
-from django.http import Http404
 from django.shortcuts import render, HttpResponse, redirect
 import pymysql
 from django.views.decorators.csrf import csrf_exempt
