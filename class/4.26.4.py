@@ -5,4 +5,4 @@ def f(x):
         return f(x - 1) + x * x
 
 
-print(f(5) * 2 )
+print(f(5) * 222 )
