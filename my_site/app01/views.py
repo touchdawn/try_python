@@ -5,7 +5,7 @@ import pymysql
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
-# Create your views here.
+# Create your views hereeeeeee.
 from app01 import models
 
 
