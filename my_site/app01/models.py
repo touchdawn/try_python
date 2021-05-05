@@ -13,7 +13,7 @@ class Account(models.Model):
     """账户表"""
     username = models.CharField(max_length=64, unique=True)
     email = models.EmailField(unique=True)
-    password  = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
     register_date = models.DateTimeField(auto_now_add=True)
     signature = models.CharField("签名", max_length=255, null=True, blank=True)
 

@@ -5,7 +5,7 @@ import pymysql
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
-# Create your views hereeeeeee.
+# （from Macbook）Create your views hereeeeeee.
 from app01 import models
 
 
@@ -37,7 +37,7 @@ def login(request):
         pwd = request.POST.get('pwd', None)
         obj = models.Account.objects.filter(username=user, password=pwd).first()
         # obj = models.Account.objects.get(name=user)
-
+        CASCADE
         # obj = models.Account.username.filter(username=user)
 
         # if user == "root" and pwd == "123":
