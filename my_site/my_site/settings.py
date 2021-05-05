@@ -70,7 +70,7 @@ TEMPLATES = [  # 模版
 WSGI_APPLICATION = 'my_site.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases#
 ##数据库信息#####
 DATABASES = {
     'default': {
