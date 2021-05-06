@@ -1,18 +1,45 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}首页{% endblock %}
-{% block css %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user }}个人中心</title>
     <link rel="stylesheet" href="app01/static/bootstrap-3.4.1-dist/css/bootstrap.min.css">
-{% endblock %}
-<!--############################-->
-<!--    <style>-->
-<!--        .pub_info{-->
-<!--            margin-top: 10px;-->
-<!--        }-->
-<!--    </style>-->
-<!--############################-->
+    <style>
 
-{% block content %}
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 60px;
+            background-color: #369;
+        }
+        .header .title{
+            font-size: 18px;
+            font-weight: 100;
+            line-height: 60px;
+            color: white;
+            margin-left: 15px;
+            /*margin-top: -10px;*/
+        }
+        .backend{
+            float: right;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <p class="title">{{ user }}的个人空间
+            <a href="" class="backend">管理</a></p>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -21,9 +48,8 @@
                     <div class="panel-body">Panel content</div>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <div class="article_list" >
+            <div class="col-md-9">
+                <div class="article_list">
                     {% for article in article_list %}
                     <div class="article-item">
                         <h5><a href="">{{ article.title }}</a></h5>
@@ -43,13 +69,7 @@
                     {% endfor %}
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Panel heading without title</div>
-                    <div class="panel-body">Panel content</div>
-                </div>
-            </div>
         </div>
     </div>
-{% endblock %}
+</body>
+</html>

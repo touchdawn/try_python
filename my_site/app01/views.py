@@ -86,18 +86,20 @@ def register(request):
 
 ##########################################
 
-
 def base(request):
     return render(request, 'base.html')
 
 
 def index(request):
-    login_user = request.COOKIES.get('login_user')
-    if not login_user:
-        return redirect('../login')
-    print(request.GET.items)
-    print(models)
-    return HttpResponse("welcome ..")
+    # login_user = request.COOKIES.get('login_user')
+    # if not login_user:
+    #     return redirect('../login')
+    # print(request.GET.items)
+    # print(models)
+
+    article_list = models.Article.objects.all()
+
+    return render(request, 'index.html',{"article_list":article_list})
 
 
 def new_article(request):
@@ -113,8 +115,8 @@ def login_view(request):
     return render(request, 'form.html')
 
 
-def article_2003(request):
-    return HttpResponse('article 2003')
+def article(request):
+    return HttpResponse('article')
 
 
 def article_year(request, year, version):
@@ -167,3 +169,18 @@ def sql_test(request):
     # cursor.execute("select username, password from user;")
     #
     # data = cursor.fetchall()
+
+def home_site(request,username):
+    # 个人页面
+    print("username", username)
+    user = models.Account.objects.filter(username=username).first()
+
+    # 查询用户每一个tag对应的文章数
+    # models.Tag.objects.values("pk").vannotate(c=Count("article__title")).values("title","c")
+
+    # 查询用户每一个年月对应的文章数
+
+    if not user:
+        return render(request, "404.html")
+    article_list=models.Article.objects.filter(account=user)
+    return render(request, "home_site.html",{"user":user, "article_list":article_list})

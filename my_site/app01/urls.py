@@ -1,5 +1,5 @@
-
-from django.urls import path, include
+from django.contrib import admin
+from django.urls import path, include, re_path
 from app01 import views
 
 extra_urls = [
@@ -8,7 +8,7 @@ extra_urls = [
 ]
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # path('test',views.test_view),
     # path('login',views.login_view),
     #
@@ -30,7 +30,11 @@ urlpatterns = [
     path('runoob/', views.runoob),
     path('login/', views.login),
     path('index/', views.index),
+    re_path('^$', views.index),
     path('base/', views.base),
     path('register/', views.register),
     path('new_article/', views.new_article),
+
+    #个人站点
+    re_path('^(?P<username>\w+)$', views.home_site),
 ]
