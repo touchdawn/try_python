@@ -38,7 +38,7 @@ def login(request):
         pwd = request.POST.get('pwd', None)
         obj = models.Account.objects.filter(username=user, password=pwd).first()
         # obj = models.Account.objects.get(name=user)
-        CASCADE
+        #CASCADE
         # obj = models.Account.username.filter(username=user)
 
         # if user == "root" and pwd == "123":
