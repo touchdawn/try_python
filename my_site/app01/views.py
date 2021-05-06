@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
 # （from Macbook）Create your views hereeeeeee.
+# (from Thinkpad)Hello!!!
 from app01 import models
 
 
